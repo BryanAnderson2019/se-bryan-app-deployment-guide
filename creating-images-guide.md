@@ -2,7 +2,7 @@
 An image of an instance is simply a snapshot of the current state of your instance. For example, if you created an instance, then had an app installed and set up on it, taking an image of that instance will allow you to make a new instance that has that app installed and ready to use.
 
 # Creating a image
-To create an image, you will need to have an instance up and running. If you havent made an instance yet, I highly recommend following the steps in the Sparta-app-deployment-guide(link) which will get you setting up an instance with an app installed and ready. For this document, I will be making an image of a different sparta app. This means that my results should show a nodejs20-sparta-test-app-2025 folder, deploy-app.sh file and package-lock.json file in the root directory of the instance at launch.
+To create an image, you will need to have an instance up and running. If you havent made an instance yet, I highly recommend following the steps in the [Sparta-app-deployment-guide.md](https://github.com/BryanAnderson2019/se-bryan-app-deployment-guide/blob/main/Sparta-app-deployment-guide.md) which will get you setting up an instance with an app installed and ready. For this document, I will be making an image of a different sparta app. This means that my results should show a nodejs20-sparta-test-app-2025 folder, deploy-app.sh file and package-lock.json file in the root directory of the instance at launch.
 
 Now, to create an image of an instance head over to the instance's page. in there click on the **Actions** button, then **Image and templates** and finaly **Create image** to start the creation process.
 ![An image of the instances page highlighting the Create image button](guide_images/Creating_an_image/instance_page.png)
