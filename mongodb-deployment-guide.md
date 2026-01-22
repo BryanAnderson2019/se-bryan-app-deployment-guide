@@ -9,7 +9,7 @@ Select your Key pair, then for the Network settings, make or use a security grou
 Soon as you have done these settings, click **Launch instance** and you should hopfully have a running instance.
 
 # Connecting and setting up your db instance
-Just like we done in the Sparta-app-deployment-guide(link). We will be connecting to it by **ssh**, so a **terminal** will need to be open for these steps.
+Just like we done in the [Sparta-app-deployment-guide.md](https://github.com/BryanAnderson2019/se-bryan-app-deployment-guide/blob/main/Sparta-app-deployment-guide.md). We will be connecting to it by **ssh**, so a **terminal** will need to be open for these steps.
 
 once you are connected to the instance, type in: `sudo nano deploy-mongodb.sh`, and Paste these lines of code into the box:
 ```
@@ -67,7 +67,7 @@ sudo systemctl enable mongod
 # restart mongo
 sudo service mongod restart
 ```
-This script will be used for starting up a mongodb database in the instance. You can now close nano by pressing **ctrl x**, it will prompet you if you want to save, **type: y then hit enter**.
+This script will be used for starting up a mongodb database in the instance. You can now close nano by pressing **Ctrl X**, it will prompet you if you want to save, **type: y then hit enter**.
 If you want, you can use `ls` to see the file, and `cat deploy-mongodb.sh` to ensure yourself that it worked.
 We now need to make it runnable, so type in `sudo chmod +x deploy-mongodb.sh` then `./deploy-mongodb.sh` to run the script.
 
@@ -86,12 +86,12 @@ Now open up another terminal and connect to this instance to get started.
 In the terminal paste in this command: `export DB_HOST=mongodb://<public db Ip>:27017/posts` this command will allow the app to connect to the mongodb, replace `<public db Ip>` with the database instance's public ip.
 ![An image of a Instance page, with the its public ip highlighted](guide_images/public_IP.png)
 
-Now that you have done that, cd into the sparta app's app folder like so `cd nodejs20-se-test-app-2025/app/` and first run `sudo npm install` then `sudo npm install pm2 -g` to install pm2 which is a process manager for node apps. once you have done that, run `pm2 kill` to kill any running processes then `node seeds/seed.js` to fill the mongodb with some data.
+Now that you have done that, cd into the sparta app's app folder like so `cd nodejs20-se-test-app-2025/app/` and first run `sudo npm install` then `sudo npm install pm2 -g` to install pm2 which is a process manager for node apps. Once you have done that, run `pm2 kill` to kill any running processes then `node seeds/seed.js` to fill the mongodb with some data.
 ![An image of the ubuntu terminal showing the seed.js in action](guide_images/mongodb_deployment/node_seeds.png)
-If everything ran as it should, you can then run `npm start app.js` to run the app. you can now go onto your web browser and type in `http://<instance public IPv4 address>:3000/posts` and you should see this:
+If everything ran as it should, you can then run `npm start app.js` to run the app. You can now go onto your web browser and type in `http://<instance public IPv4 address>:3000/posts` and you should see this:
 ![An image of the app running on a web browser with the db data being displayed](guide_images/mongodb_deployment/app_running_web.png)
 
-The `node seeds/seed.js` fills in the mongodb with random data, if we where to run this command again, the app will display different results. to do so, you will need to first need to press **ctrl C** to stop the app, then run `pm2 kill` then `node seeds/seed.js` and finaly `npm start app.js` to run the app again with new data. 
+The `node seeds/seed.js` fills in the mongodb with random data, if we where to run this command again, the app will display different results. to do so, you will need to first need to press **Ctrl C** to stop the app, then run `pm2 kill` then `node seeds/seed.js` and finaly `npm start app.js` to run the app again with new data. 
 ![An image of the ubuntu terminal showing the steps mentioned above](guide_images/mongodb_deployment/running_app.js_again.png)
 If you now look back at the web, the results should be different from last time.
 ![An image of the app running on a web browser with new data being displayed, as well as the old data on a screenshot for comparison](guide_images/mongodb_deployment/results.png)
