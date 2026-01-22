@@ -62,7 +62,7 @@ sudo apt install -y nodejs
 ```
 You can now close nano by pressing **ctrl x**, it will prompet you if you want to save, **type: y then hit enter**.
 ![An image of a bash terminal using nano](guide_images/creating_start_up_script.png)
-If you want, you can use `ls` to see the file, and `cat deploy-nginx` to ensure yourself that it worked.
+If you want, you can use `ls` to see the file, and `cat deploy-nginx.sh` to ensure yourself that it worked.
 
 now, to run the script, we need to first type in: `sudo chmod +x deploy-nginx.sh` which will allow us to execute the script. 
 ![An image of a bash terminal using the chmod command and checking it](guide_images/chmod.png)
